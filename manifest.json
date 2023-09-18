@@ -5,6 +5,7 @@
     "manifest_version": 3,
     "author": "Placido Diaz",
     "action":{
+        "persistent": true,
         "default_popup": "index.html",
         "default_title": "Multitool"
     }
