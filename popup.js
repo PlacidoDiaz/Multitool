@@ -37,3 +37,27 @@ document.getElementById('reset').addEventListener('click', function () {
     document.getElementById('display').textContent = '00:00:00';
     document.getElementById('start').textContent = 'Iniciar';
 });
+
+// Ejecuta la extension en una pestaña
+document.getElementById('web').addEventListener('click', function () {
+    chrome.tabs.create({url: 'popup.html'}) 
+});
+
+
+const popupWindow = window.open(
+    chrome.runtime.getURL("popup_window.html"),
+    "exampleName",
+    "width=300,height=300");
+    
+    var div = document.getElementById('div');
+    
+    div.innerHTML = '';
+
+    // Crea un nuevo elemento h1
+    var textoExtension = document.createElement('h1');
+    
+    // Establece el texto del nuevo h1
+    textoExtension.textContent = 'Continua en la Ventana Emergente...';
+    
+    // Agrega el nuevo h1 al div
+    div.appendChild(textoExtension);
