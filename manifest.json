@@ -6,13 +6,13 @@
     "author": "Placido Diaz",
     "action":{
         "persistent": true,
-        "default_popup": "popup.html",
+        "default_popup": "popup/popup.html",
         "default_title": "Multitool"
     },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["contentscript.js"]
+        "js": ["scripts/content.js"]
       }
     ],
     "background": {

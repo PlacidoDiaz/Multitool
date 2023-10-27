@@ -3,14 +3,6 @@ body {
     padding: 10px;
 }
 
-.cronometro {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
 h1 {
     font-size: 16px;
     margin: 0 0 10px;
