@@ -4,4 +4,3 @@ console.log("Im background script")
 //chrome.tabs.create({url: 'popup.html'}) 
 
 //chrome.tabs.create({url: chrome.runtime.getURL('popup.html#window')});
-
