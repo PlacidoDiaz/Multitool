@@ -23,7 +23,9 @@
       "tabs",
       "activeTab",
       "declarativeNetRequest",
-      "storage"
+      "storage",
+      "clipboardRead",
+      "clipboardWrite"
   ],
   "declarative_net_request": {
       "rule_resources":[

@@ -3,6 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("btn1").addEventListener("click", toggleAdBlock);
+    document.getElementById("btnClean").addEventListener("click", copiaTextArea);
     checkAdBlockStatus();
 });
 
@@ -63,3 +64,19 @@ function checkAdBlockStatus() {
         }
     });*/
 }
+
+function copiaTextArea(){
+    // Añade el texto del text area al clipboard
+    var copyText = document.getElementById("ta");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+}
+
+/* COPIAR DEL CORTAPAPELES, devuelve problema de permisos */
+/*document.getElementById('copyButton').addEventListener('click', function() {
+    navigator.clipboard.readText().then(text => {
+      console.log('Texto copiado:', text); 
+    });
+  });*/
+  
