@@ -4,6 +4,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("btn1").addEventListener("click", toggleAdBlock);
     document.getElementById("btnClean").addEventListener("click", copiaTextArea);
+    document.getElementById("btnCleanReset").addEventListener("click", resetTextArea);
+
     checkAdBlockStatus();
 });
 
@@ -71,6 +73,10 @@ function copiaTextArea(){
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
+}
+
+function resetTextArea(){
+    var prueba = document.getElementById("ta").value = "";
 }
 
 /* COPIAR DEL CORTAPAPELES, devuelve problema de permisos */
