@@ -1,36 +1,37 @@
 {
-    "name": "Multitool",
-    "version": "1.0.0",
-    "description": "Herramienta multiusos",
-    "manifest_version": 3,
-    "author": "Placido Diaz",
-    "action":{
-        "persistent": true,
-        "default_popup": "popup/popup.html",
-        "default_title": "Multitool"
-    },
-    "content_scripts": [
+  "name": "Multitool",
+  "version": "1.0.0",
+  "description": "Herramienta multiusos",
+  "manifest_version": 3,
+  "author": "Placido Diaz",
+  "action":{
+      "persistent": true,
+      "default_popup": "popup/popup.html",
+      "default_title": "Multitool"
+  },
+  "content_scripts": [
       {
-        "matches": ["<all_urls>"],
-        "js": ["scripts/content.js"]
+          "matches": ["<all_urls>"],
+          "js": ["scripts/content.js"]
       }
-    ],
-    "background": {
+  ],
+  "background": {
       "service_worker": "background.js"
-    },
-    "permissions": [
-        "scripting",
-        "tabs",
-        "activeTab",
-        "declarativeNetRequest"
-    ],
-    "declarative_net_request": {
-        "rule_resources":[
+  },
+  "permissions": [
+      "scripting",
+      "tabs",
+      "activeTab",
+      "declarativeNetRequest",
+      "storage"
+  ],
+  "declarative_net_request": {
+      "rule_resources":[
           {
-            "id": "ruleset_1",
-            "enabled": true,
-            "path": "rules.json"
+              "id": "ruleset_1",
+              "enabled": true,
+              "path": "rules.json"
           }
-        ]
-    }
+      ]
   }
+}
