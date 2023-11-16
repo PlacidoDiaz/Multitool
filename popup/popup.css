@@ -40,3 +40,7 @@ textarea {
     display: inline-block; /* Opcional, para asegurar que los botones estén en línea */
     margin-left: 15px;
 }
+
+.container {
+    display: flex;
+}

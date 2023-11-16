@@ -11,48 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleAdBlock() {
     var button = document.getElementById("btn1");
-    var buttonText = button.innerHTML;
+    var isAdBlockEnabled = button.innerHTML === "Enabled";
 
-    console.log(buttonText);
+    // Toggle state
+    chrome.storage.sync.set({ adBlockEnabled: !isAdBlockEnabled }, function() {
+        if (chrome.runtime.lastError) {
+            console.log("Error saving state:", chrome.runtime.lastError);
+        } else {
+            // Update button label
+            button.innerHTML = isAdBlockEnabled ? "Disabled" : "Enabled";
+            console.log("AdBlock state toggled to:", button.innerHTML);
 
-    if (buttonText === "Disabled") {
-        // Deshabilitar AdBlock
-        
-        chrome.storage.sync.set({ adBlockEnabled: false }, function() {
-            if (chrome.runtime.lastError) {
-                console.log("Error al guardar en storage:", chrome.runtime.lastError);
-            } else {
-                console.log("AdBlock Disabled");
-                button.innerHTML = "Disabled";
-                // Continuar con la lógica posterior
-            }
-        });
-        
-        /*chrome.storage.sync.set({ adBlockEnabled: false }, function() {
-            button.innerHTML = "Enabled";
-            location.reload();
-            console.log("AdBlock Disabled");
-        });*/
-        
-    } else if (buttonText === "Enabled") {
-    
-        chrome.storage.sync.set({ adBlockEnabled: true }, function() {
-            if (chrome.runtime.lastError) {
-                console.log("Error al guardar en storage:", chrome.runtime.lastError);
-            } else {
-                console.log("AdBlock Enabled");
-                button.innerHTML = "Enabled";
-                // Continuar con la lógica posterior
-            }
-        });
-    
-        // Habilitar AdBlock
-        /*chrome.storage.sync.set({ adBlockEnabled: true }, function() {
-            button.innerHTML = "Disable";
-            location.runtime.reload()
-            console.log("AdBlock Enabled");
-        });*/
-    }
+            // Reload the page dont save the disabled status
+            //location.reload();
+        }
+    });
 }
 
 function checkAdBlockStatus() {
