@@ -1,5 +1,5 @@
 # Multitool 🧰
-Extensión de Chrome con numeroso tipo de herramientas
+Extensión de Chrome con variedad de herramientas.
 
 ## Adblock ⛔
 Limita acceso a las siguientes rutas de anuncios:
